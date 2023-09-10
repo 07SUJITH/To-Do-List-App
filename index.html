@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/assets/images/favicon1.png" type="image/x-icon">
+</head>
+<body>
+<!-- background animation start -->
+<div class="area" >
+    <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+</div >
+<!-- background animation end -->
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-Do-List  <img src="assets/images/favicon1.png" alt=""> </h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="type your task here... ">
+                <button id="button" onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!-- <li class="checked">Task1</li>
+                <li>Task2</li>
+                <li>Task3</li>
+                <li>Task4</li>
+                <li>Task5</li> -->
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
