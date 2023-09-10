@@ -1,0 +1,245 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@600&family=Kalam:wght@400;700&family=Playfair+Display:ital,wght@1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Kalam', cursive;
+}
+
+.container{
+    width: 97vw;
+    min-height:100vh;
+    padding: 10px;
+    
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 500px;
+    background: #a0a5e7cf;
+    margin: 100px auto ;
+    margin-bottom: 20px;
+    padding: 40px 30px 70px 30px;
+    border-radius: 15px;
+    overflow:visible;
+    box-shadow: 0px 8px 15px rgba(23, 7, 71, 0.9);
+}
+.todo-app>h2{
+    color: #072956;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.todo-app>h2>img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    background: #ddd4e4;
+    margin-bottom: 25px;
+    box-shadow: 0px 8px 15px rgba(23, 7, 71, 0.5);
+}
+input{
+    border: none;
+    flex: 1;
+    background: transparent ;
+    padding: 10px;
+    padding-left: 30px;
+    font-weight: 18px;
+    font-size: 18px;
+}
+button{
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    background: #3aa1e0;
+    color: #ddd4e4;
+    margin: 2px;
+    box-shadow: 0px 8px 15px rgba(45, 74, 203, 0.3);
+}
+.hover-effect,button:hover{
+    transform: scale(.90); 
+    transition: transform 0.5s ease-in-out; 
+}
+button:active,.button-active{
+    background-color: #7490c7;
+}
+
+#list-container li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    position: relative;
+    cursor: pointer; 
+}
+#list-container li::before{
+    content:'';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(assets/images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+#list-container li.checked{
+    color: #555;
+    text-decoration: line-through;
+    
+}
+#list-container li.checked::before{
+    background-image: url(assets/images/checked2.png);  
+   
+}
+#list-container li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#list-container li span:hover{
+    background: #e15252;
+}
+
+
+/* background animation */
+
+.area{
+    background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    user-select: none;
+    cursor: pointer;
+    position: fixed;
+    z-index: -1;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 10%;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+} 
