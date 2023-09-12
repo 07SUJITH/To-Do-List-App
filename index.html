@@ -26,17 +26,18 @@
 <!-- background animation end -->
     <div class="container">
         <div class="todo-app">
+            <div class="date-time">
+                <p id="date"></p>
+                <p id="time"></p>
+            </div>
             <h2>To-Do-List  <img src="assets/images/favicon1.png" alt=""> </h2>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="type your task here... ">
+            <div class="inputField">
+                <input type="text" id="input-box" placeholder="Describe your task here.">
+                <input type="number" id="timeRequired" placeholder="Time required(in hours)">
+
                 <button id="button" onclick="addTask()">Add</button>
             </div>
             <ul id="list-container">
-                <!-- <li class="checked">Task1</li>
-                <li>Task2</li>
-                <li>Task3</li>
-                <li>Task4</li>
-                <li>Task5</li> -->
             </ul>
         </div>
     </div>

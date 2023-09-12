@@ -1,6 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@600&family=Kalam:wght@400;700&family=Playfair+Display:ital,wght@1,500&display=swap');
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 *{
     margin: 0;
     padding: 0;
@@ -15,38 +14,35 @@
     padding: 10px;
     
 }
-
 .todo-app{
     width: 100%;
-    max-width: 500px;
-    background: #a0a5e7cf;
+    max-width: 600px;
+    background: #f0f0f0ee;
     margin: 100px auto ;
     margin-bottom: 20px;
-    padding: 40px 30px 70px 30px;
+    padding: 10px 30px 70px 30px;
     border-radius: 15px;
     overflow:visible;
-    box-shadow: 0px 8px 15px rgba(23, 7, 71, 0.9);
+    box-shadow: 0px 8px 15px rgba(23, 7, 71, 0.5);
 }
-.todo-app>h2{
+.todo-app h2{
     color: #072956;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
 }
-.todo-app>h2>img{
+.todo-app h2 img{
     width: 30px;
     margin-left: 10px;
 }
-
-.row{
+.date-time{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 40px;
-    background: #ddd4e4;
-    margin-bottom: 25px;
-    box-shadow: 0px 8px 15px rgba(23, 7, 71, 0.5);
+    justify-content: flex-end;
+    padding: 0 10px;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #938d97;
 }
 input{
     border: none;
@@ -57,6 +53,13 @@ input{
     font-weight: 18px;
     font-size: 18px;
 }
+
+@media only screen and (min-width: 591px) {
+    .inputField {
+        text-align: center;
+    }
+}
+
 button{
     border: none;
     padding: 15px 30px;
@@ -70,13 +73,19 @@ button{
 }
 @media only screen and (max-width: 436px) {
     button{
-        padding: 10px 10px;
+        padding: 10px 20px;
         font-size: 12px;
-        border-radius: 50%;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
     }
     input{
-        width: 195px;
+        width: 90%;
     }
+    .todo-app{
+        margin-top: 50px;
+    }
+
   }
 .hover-effect,button:hover{
     transform: scale(.90); 
@@ -93,7 +102,8 @@ button:active,.button-active{
     position: relative;
     cursor: pointer; 
 }
-#list-container li::before{
+
+.completeIcon {
     content:'';
     position: absolute;
     height: 28px;
@@ -102,40 +112,48 @@ button:active,.button-active{
     background-image: url(assets/images/unchecked.png);
     background-size: cover;
     background-position: center;
-    top: 12px;
-    left: 8px;
+    left: 0px;
 }
-#list-container li.checked{
-    color: #555;
-    text-decoration: line-through;
-    
+.completeIcon:hover{
+    box-shadow: 0px 0px  20px rgba(41, 65, 170, 0.9);
 }
-#list-container li.checked::before{
+.checked {
     background-image: url(assets/images/checked2.png);  
-   
+    text-decoration: line-through;
 }
-#list-container li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    line-height: 40px;
-    text-align: center;
+.removeIcon{
+    background: #de4949;
+    padding: 5px 13px;
     border-radius: 50%;
-    cursor: pointer;
+    color: #ddd4e4;
+    margin-left: 5px;
 }
-#list-container li span:hover{
-    background: #e15252;
+.removeIcon:hover{
+    background: #c52e2e;
 }
 
+#list-container li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.task{
+    background-color: #aeb1b340;
+    border-radius: 10px;
+    padding: 2px 10px 2px  20px;
+    display: inline;
+    margin-right: 5px;
+    flex: 1;    
+}
+.cross-line{
+    text-decoration: line-through;
+    color: #7c4f5e;
+}
 /* background animation */
-
 .area{
-    background: #4e54c8;  
-    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    background: rgba(78, 136, 202, 0.854);  
+    background: -webkit-linear-gradient(to left, #010003, #6e41d7);  
     width: 100%;
     height:100vh;
     user-select: none;
@@ -152,7 +170,6 @@ button:active,.button-active{
     height: 100%;
     overflow: hidden;
 }
-
 .circles li{
     position: absolute;
     display: block;
@@ -172,7 +189,6 @@ button:active,.button-active{
     animation-delay: 0s;
 }
 
-
 .circles li:nth-child(2){
     left: 10%;
     width: 20px;
@@ -180,14 +196,12 @@ button:active,.button-active{
     animation-delay: 2s;
     animation-duration: 12s;
 }
-
 .circles li:nth-child(3){
     left: 70%;
     width: 20px;
     height: 20px;
     animation-delay: 4s;
 }
-
 .circles li:nth-child(4){
     left: 40%;
     width: 60px;
@@ -195,14 +209,12 @@ button:active,.button-active{
     animation-delay: 0s;
     animation-duration: 18s;
 }
-
 .circles li:nth-child(5){
     left: 65%;
     width: 20px;
     height: 20px;
     animation-delay: 0s;
 }
-
 .circles li:nth-child(6){
     left: 75%;
     width: 110px;
