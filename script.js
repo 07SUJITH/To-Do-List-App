@@ -40,12 +40,13 @@ const  addTask = ()=>{
 
 
 const handleItemClick = e =>{
-    if(e.target.classList.contains("removeIcon")){
-        e.target.parentElement.remove();
+    if(e.target.tagName==="I"){
+        const parent = e.target.parentElement;
+        const grandparentElement = parent.parentElement;
+        grandparentElement.remove();
         saveData();
         checkAndResetTime();
-    }
-    else if(e.target.classList.contains("completeIcon")){
+    }else if(e.target.classList.contains("completeIcon")){
         e.target.classList.toggle("checked");
         e.target.parentElement.classList.toggle("cross-line"); 
         saveData();
