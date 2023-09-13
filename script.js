@@ -28,9 +28,8 @@ const  addTask = ()=>{
         p.innerHTML= task;
         li.appendChild(p);
 
-        let removeIcon = document.createElement('span');
-        removeIcon.classList.add("removeIcon");
-        removeIcon.innerHTML ="<i class='fa fa-close red-color'></i>";
+        const removeIcon = document.createElement('i');
+        removeIcon.classList.add("fa", "fa-close" ,"red-color" ,"removeIcon");
         li.appendChild(removeIcon);
         listContainer.appendChild(li);
     }
@@ -42,8 +41,7 @@ const  addTask = ()=>{
 const handleItemClick = e =>{
     if(e.target.tagName==="I"){
         const parent = e.target.parentElement;
-        const grandparentElement = parent.parentElement;
-        grandparentElement.remove();
+        parent.remove();
         saveData();
         checkAndResetTime();
     }else if(e.target.classList.contains("completeIcon")){
